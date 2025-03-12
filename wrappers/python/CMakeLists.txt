@@ -21,7 +21,7 @@ find_program(CYTHON_EXECUTABLE cython)
 # CMake populates this var automatically but we need to specify prefix
 execute_process(COMMAND
   ${Python${Python_BUILD_VERSION}_EXECUTABLE}
-    -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(plat_specific=False, standard_lib=False, prefix='${CMAKE_INSTALL_PREFIX}'))"
+    -c "from distutils.sysconfig import get_python_lib; print(get_python_lib(plat_specific=False, standard_lib=False))"
   OUTPUT_VARIABLE Python${Python_BUILD_VERSION}_SITELIB OUTPUT_STRIP_TRAILING_WHITESPACE)
 
 # Figure out numpy include path
